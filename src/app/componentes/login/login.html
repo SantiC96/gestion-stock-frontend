@@ -1,0 +1,17 @@
+<div class="container text-center">
+    <h3>Iniciar Sesión</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="nombreUsuario" class="form-label">Usuario</label>
+            <input type="text" name="nombreUsuario" class="form-control" id="nombreUsuario" required [(ngModel)]="loginRequest.nombreUsuario">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="password" class="form-control" id="password" required [(ngModel)]="loginRequest.password">
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+        @if (mensajeError) {
+            <p style="color: red;">{{ mensajeError }}</p>
+        }
+    </form>
+</div>
